@@ -21,7 +21,7 @@ DEFCONFIG="lineageos_oneplus3_defconfig"
 
 # Kernel Details
 VER=Render-Kernel
-VARIANT="OP3-LOS-N"
+VARIANT="OP3-LOS-N-EAS"
 
 # Vars
 export LOCALVERSION=~`echo $VER`
@@ -33,9 +33,9 @@ export CCACHE=ccache
 
 # Paths
 KERNEL_DIR=`pwd`
-REPACK_DIR="${HOME}/android/source/kernel/OP3-AnyKernel"
-PATCH_DIR="${HOME}/android/source/kernel/OP3-AnyKernel/patch"
-MODULES_DIR="${HOME}/android/source/kernel/OP3-AnyKernel/modules"
+REPACK_DIR="${HOME}/android/source/kernel/AnyKernel2"
+PATCH_DIR="${HOME}/android/source/kernel/AnyKernel2/patch"
+MODULES_DIR="${HOME}/android/source/kernel/AnyKernel2/modules"
 ZIP_MOVE="${HOME}/android/source/zips/OP3-zips"
 ZIMAGE_DIR="${HOME}/android/source/kernel/OP3-LOS-kernel/arch/arm64/boot"
 
