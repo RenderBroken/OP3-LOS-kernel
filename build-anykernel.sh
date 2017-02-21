@@ -42,7 +42,7 @@ ZIMAGE_DIR="${HOME}/android/source/kernel/OP3-LOS-kernel/arch/arm64/boot"
 # Functions
 function checkout_ak_branches {
 		cd $REPACK_DIR
-		git checkout rk-oos-anykernel
+		git checkout rk-op3-los-n
 		cd $KERNEL_DIR
 }
 
