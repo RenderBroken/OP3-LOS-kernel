@@ -1,5 +1,15 @@
 Changelog For Render Kernel!!
 
+R5:
+2941cbc (HEAD -> rk-los-n-eas-master, origin/rk-los-n-eas-master) Defconfig: Enable Advanced TCP Options
+18d3e99 msm: mpm: disable debugging
+d9494ee msm: vidc: disable debug logs
+04bc1d9 qcom-cpufreq: take diferent startup freqs from OP3 into account
+c31b66f qcom-cpufreq: ensure startup is according to default frequencies (no overclocking/underclocking)
+9611e7e Remove "-dirty" from Kernel name
+520efe7 power: make sync on suspend optional
+7378631 Render Kernel for LOS-N-EAS: Release 4
+
 R4:
 eb74457 (HEAD -> rk-los-n-eas-master, eas-1.2-testing-r1-t3-upstream) display: add a simple api to query the display state (on/off) at any point in time
 115b90e platform/msm: haptic: expose vibrate function
