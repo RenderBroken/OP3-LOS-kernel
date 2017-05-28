@@ -1,5 +1,233 @@
 Changelog For Render Kernel!!
 
+R6:
+b17cbd4 (HEAD -> rk-los-n-eas-master, eas-r6-t6) Merge remote-tracking branch 'lineage-op3/cm-14.1' into eas-r6-t6
+ab9517a (origin/eas-r6-t6) Build: Update TC to Linaro 6.3.1 052017
+1bf6189 Defconfig: Disable CONFIG_SCHED_DEBUG
+a783dd4 Defconfig: Enable Low Memory Killer and disable MEMCG
+b112e7e EAS: Silence logging caused by EAS changes
+00e1ba2 cpuidle: don't disable cpuidle when entering suspend
+78d2e85c lowmemorykiller: account for unevictable pages
+ea5c63e android/lmk: reset to common-3.18 version
+01f9689 sched/fair: Fix load_balance() affinity redo path
+ac1d6db sched/fair: Remove group imbalance from calculate_imbalance()
+ea6e0ed Defconfig: Enable CONFIG_BLK_DEV_NULL_BLK for I/O benchmarking
+1326584 Defconfig: Enable CONFIG_BFQ_GROUP_IOSCHED
+acfeff4 BFQ: Port BFQ-v8r10 to Android 3.18 kernel
+daee2d7 Remove BFQ source files from 3.18
+573d07e sched: Make iowait_boost optional in schedutil
+051baff sched/cpufreq_schedutil: use now as reference when aggregating shared policy requests
+fc51f21 cpufreq: schedutil: Trace frequency only if it has changed
+dee9e62 cpufreq: schedutil: Avoid reducing frequency of busy CPUs prematurely
+724451a cpufreq: schedutil: Fix per-CPU structure initialization in sugov_start()
+4177ded cpufreq: schedutil: Refactor sugov_next_freq_shared()
+7c8c51c cpufreq: schedutil: Pass sg_policy to get_next_freq()
+706a525 cpufreq: schedutil: move cached_raw_freq to struct sugov_policy
+84baa2a cpufreq: schedutil: Rectify comment in sugov_irq_work() function
+414f698 cpufreq: schedutil: irq-work and mutex are only used in slow path
+af3499f cpufreq: schedutil: enable fast switch earlier
+8823706 cpufreq: schedutil: Avoid indented labels
+0ad12ce (lineage-op3/cm-14.1) ion: adjust system heap pool orders
+33b6f21 ANDROID: mmc: move to a SCHED_FIFO thread
+33bd17d sched: avoid migrating when softint on tgt cpu should be short
+4df8d30 sched: avoid scheduling RT threads on cores currently handling softirqs
+4bc39cc sched/rt: Avoid moving rt task if destination CPU does not run low priority task.
+57ce978 lowmemorykiller: account for unevictable pages
+dd742f1 android: binder: remove useless preemption disable on target_wait
+4e6bb14 net/packet: fix overflow in check for tp_reserve
+0e0a89a net/packet: fix overflow in check for tp_frame_nr
+3c1cc5c net/packet: fix overflow in check for priv area size
+a63bc81 dccp/tcp: do not inherit mc_list from parent
+8f475aa ip6_gre: fix ip6gre_err() invalid reads
+f5dbfd2 tty: n_hdlc: get rid of racy n_hdlc.tbuf
+79a275b TTY: n_hdlc, fix lockdep false positive
+178808f Merge commit '396a2965850160ca5427239d9af56ec42fe4774f' into HEAD
+516fd61 op3: Set cfq as default I/O scheduler
+e6fda3c kernel: Fix potential refcount leak in su check
+b0856c3 kernel: Only expose su when daemon is running
+396a296 f2fs: switch to using fscrypt_match_name()
+c5ab4eb fscrypt: introduce helper function for filename matching
+ba8661c fscrypt: fix context consistency check when key(s) unavailable
+ae8ffd3 fscrypt: Move key structure and constants to uapi
+0cb2fd2 fscrypt: remove unnecessary checks for NULL operations
+6b332b9 fscrypt: eliminate ->prepare_context() operation
+a9244cc fscrypt: remove broken support for detecting keyring key revocation
+43d2cb9 fscrypt: avoid collisions when presenting long encrypted filenames
+9f0ac4af f2fs: check entire encrypted bigname when finding a dentry
+ef9980d f2fs: sync f2fs_lookup() with ext4_lookup()
+ce6e24e f2fs: fix a mount fail for wrong next_scan_nid
+0bd2e75 f2fs: relocate inode_{,un}lock in F2FS_IOC_SETFLAGS
+c7ffd6d f2fs: show available_nids in f2fs/status
+57708b7 f2fs: flush dirty nats periodically
+39b3840 f2fs: introduce CP_TRIMMED_FLAG to avoid unneeded discard
+eee6a96 f2fs: allow cpc->reason to indicate more than one reason
+46a8ca8 f2fs: release cp and dnode lock before IPU
+1095698 f2fs: shrink size of struct discard_cmd
+ade8dd5 f2fs: don't hold cmd_lock during waiting discard command
+ef0d56e f2fs: nullify fio->encrypted_page for each writes
+24b316e f2fs: sanity check segment count
+4a8cf45f f2fs: introduce valid_ipu_blkaddr to clean up
+a69dbfd f2fs: lookup extent cache first under IPU scenario
+4c660c4 f2fs: reconstruct code to write a data page
+9875a1b f2fs: introduce __wait_discard_cmd
+a9711d6 f2fs: introduce __issue_discard_cmd
+e6e3b6a f2fs: enable small discard by default
+7ab07b57 f2fs: delay awaking discard thread
+0c5081e f2fs: seperate read nat page from nat_tree_lock
+dfccf3a f2fs: fix multiple f2fs_add_link() having same name for inline dentry
+174241e f2fs: skip encrypted inode in ASYNC IPU policy
+40cd2e9 f2fs: fix out-of free segments
+c9d01c3 f2fs: improve definition of statistic macros
+2e06ed5 f2fs: assign allocation hint for warm/cold data
+48036ed f2fs: fix _IOW usage
+29e4eed f2fs: add ioctl to flush data from faster device to cold area
+67716cd f2fs: introduce async IPU policy
+cf54a09 f2fs: add undiscard blocks stat
+ce97d27 f2fs: unlock cp_rwsem early for IPU writes
+3cb8d1a f2fs: introduce __check_rb_tree_consistence
+95ae34b f2fs: trace __submit_discard_cmd
+3c901dd f2fs: in prior to issue big discard
+8444898 f2fs: clean up discard_cmd_control structure
+38d4655 f2fs: use rb-tree to track pending discard commands
+95e0d0d f2fs: avoid dirty node pages in check_only recovery
+9d796e5 f2fs: fix not to set fsync/dentry mark
+dcb7188 f2fs: allocate hot_data for atomic writes
+c4609776 f2fs: give time to flush dirty pages for checkpoint
+785b192 f2fs: fix fs corruption due to zero inode page
+4a74657 f2fs: shrink blk plug region
+3728be9 f2fs: extract rb-tree operation infrastructure
+4a511a3 f2fs: avoid frequent checkpoint during f2fs_gc
+eacf10a f2fs: clean up some macros in terms of GET_SEGNO
+5a9345c f2fs: clean up get_valid_blocks with consistent parameter
+7548d30 f2fs: use segment number for get_valid_blocks
+1e7c3aa f2fs: guard macro variables with braces
+648c287 f2fs: fix comment on f2fs_flush_merged_bios() after 86531d6b
+fc5aa04 f2fs: prevent waiter encountering incorrect discard states
+ce4f972 f2fs: introduce f2fs_wait_discard_bios
+2f2774d f2fs: split discard_cmd_list
+1ab7acd Revert "f2fs: put allocate_segment after refresh_sit_entry"
+223fb7d f2fs: split make_dentry_ptr() into block and inline versions
+c7873f9 f2fs: submit bio of in-place-update pages
+66e005d f2fs: remove the redundant variable definition
+c873cf9 f2fs: avoid IO split due to mixed WB_SYNC_ALL and WB_SYNC_NONE
+d3d480b f2fs: write small sized IO to hot log
+b08f1e8 f2fs: use bitmap in discard_entry
+4a6712f f2fs: clean up destroy_discard_cmd_control
+8912c9e f2fs: count discard command entry
+40605ac f2fs: show issued flush/discard count
+540bbb1 f2fs: relax node version check for victim data in gc
+e1ca40a f2fs: start SSR much eariler to avoid FG_GC
+882323d f2fs: allocate node and hot data in the beginning of partition
+8ba8540 f2fs: fix wrong max cost initialization
+50bc8de f2fs: allow write page cache when writting cp
+655a400 f2fs: don't reserve additional space in xattr block
+e79c49f f2fs: clean up xattr operation
+d912071 f2fs: don't track volatile file in dirty inode list
+b60940e f2fs: show the max number of volatile operations
+fa53a53 f2fs: fix race condition in between free nid allocator/initializer
+ecf9ef3 f2fs: use set_page_private marcro in f2fs_trace_pid
+85dc038 f2fs: fix recording invalid last_victim
+b993b82 f2fs: more reasonable mem_size calculating of ino_entry
+03544d5 f2fs: calculate the f2fs_stat_info into base_mem
+9403193 f2fs: avoid stat_inc_atomic_write for non-atomic file
+cfa4937 f2fs: sanity check of crc_offset from raw checkpoint
+1139ced f2fs: cleanup the disk level filename updating
+99d14c6 f2fs: cover update_free_nid_bitmap with nid_list_lock
+980f1ae f2fs: fix bad prefetchw of NULL page
+7ffc7d7 f2fs: clear FI_DATA_EXIST flag in truncate_inline_inode
+7501b57 f2fs: move mnt_want_write_file after arguments checking
+376554c f2fs: check new size by inode_newsize_ok in f2fs_insert_range
+b85713f f2fs: avoid copy date to user-space if move file range fail
+dfcdf0a f2fs: drop duplicate new_size assign in f2fs_zero_range
+fb56043 f2fs: adjust the way of calculating nat block
+b8dd635 f2fs: add fault injection on f2fs_truncate
+7d00727 f2fs: check range before defragment
+f097fad f2fs: use parameter max_items instead of PIDVEC_SIZE
+59acb96 f2fs: add a punch discard command function
+40dd3c7 f2fs: allocate a bio for discarding when actually issuing it
+02ccaef f2fs: skip writeback meta pages if cp_mutex acquire failed
+d8f9c77 f2fs: show more precise message on orphan recovery failure
+fb0cf25 f2fs: remove dead macro PGOFS_OF_NEXT_DNODE
+cd93c1a f2fs: drop duplicate radix tree lookup of nat_entry_set
+1141564 f2fs: make sure trace all f2fs_issue_flush
+02b385d f2fs: don't allow volatile writes for non-regular file
+fb98d82 f2fs: don't allow atomic writes for not regular files
+253d19f f2fs: fix stale ATOMIC_WRITTEN_PAGE private pointer
+4ee9334 f2fs: build stat_info before orphan inode recovery
+c3f4b2a f2fs: fix the fault of calculating blkstart twice
+277a5ab f2fs: fix the fault of checking F2FS_LINK_MAX for rename inode
+d94c16b f2fs: don't allow to get pino when filename is encrypted
+968d314 f2fs: fix wrong error injection for evict_inode
+2599845 f2fs: le32_to_cpu for ckpt->cp_pack_total_block_count
+b2de468 f2fs: combine nat_bits and free_nid_bitmap cache
+8834c93 f2fs: skip scanning free nid bitmap of full NAT blocks
+e723084 drivers: staging: Update qcacld-2.0 driver
+5f583f3 Merge tag 'LA.UM.5.5.r1-04600-8x96.0' of https://source.codeaurora.org/quic/la/kernel/msm-3.18 into HEAD
+d3dac65 misc: Squashed revert upstream applied security patches
+77fba31 Render Kernel for LOS-N-EAS: Release 5
+acb553d Merge "msm: mdss: fix race condition during mdp debugfs release"
+9741fce Merge "soc: qcom: pil: Avoid possible buffer overflow during Modem boot"
+541f872 Merge "soc: qcom: pil: Explicitly clear the subsystem loading address"
+a6ddf4b Merge "soc: qcom: Do not clear segments if pil boot failed in memory allocation"
+a45cd5a Merge "msm: mdss: Validating data values before passing on as operand"
+08c0d1b Merge "mmc: card: block: check the user controlled parameters to avoid overflow"
+8afa4ae Merge "msm: camera: Add regulator enable and disable independent of CSID"
+2758c3b Merge "msm: camera: isp: Check userspace parameters"
+2bbe679 Merge "crypto: msm: check invalid src and dst vbuf in qcedev.c"
+e30f62c Merge "mmc: cmdq_hci: Avoid releasing clock twice during DCMD error"
+3fd4a41 Merge "mmc: queue: Remove BUG_ON() in cmdq_thread"
+9ba289a soc: qcom: pil: Explicitly clear the subsystem loading address
+b5e927e soc: qcom: Do not clear segments if pil boot failed in memory allocation
+b41684d soc: qcom: Skip clearing modem FW region post load failure
+5fca644 msm: mdss: fix race condition during mdp debugfs release
+06f55e52 soc: qcom: pil: Avoid possible buffer overflow during Modem boot
+6fbd9ea msm: mdss: Validating data values before passing on as operand
+a72568c mmc: card: block: check the user controlled parameters to avoid overflow
+53c6b89 msm: camera: Add regulator enable and disable independent of CSID
+bfd8ffc msm: camera: isp: Check userspace parameters
+8687d9e crypto: msm: check invalid src and dst vbuf in qcedev.c
+be231d9 mmc: cmdq_hci: Avoid releasing clock twice during DCMD error
+cca9cd0 mmc: queue: Remove BUG_ON() in cmdq_thread
+930be7b msm: msm_bus: Fix inconsistent type casting in bandwidth monitor driver
+b780cd2 Merge 60c1573ead1b346fcf41f57f77fc15bf8757e612 on remote branch
+b39c146 mm: Tighten x86 /dev/mem with zeroing reads
+94c9fb3 crypto: ahash - Fix EINPROGRESS notification callback
+49a755e mm/mempolicy.c: fix error handling in set_mempolicy and mbind.
+13914d6 KEYS: fix keyctl_set_reqkey_keyring() to not leak thread keyrings
+412f71f scsi: sg: check length passed to SG_NEXT_CMD_LEN
+5af6f27 xfrm_user: validate XFRM_MSG_NEWAE XFRMA_REPLAY_ESN_VAL replay_window
+d9b5566 KEYS: Change the name of the dead type to ".dead" to prevent user access
+4a4bddf ANDROID: ion: Protect kref from userspace manipulation
+ffcb9ac Kconfig: msm: disable ultrasound driver
+f090ea2 KEYS: Disallow keyrings beginning with '.' to be joined as session keyrings
+20a5627 mm: migrate dirty page without clear_page_dirty_for_io etc
+60c1573 Promotion of kernel.lnx.3.18.c5-170502.
+838df26 msm: camera: Prevent info leak in kernel driver.
+db12ed8 Promotion of kernel.lnx.3.18.c5-170429.
+8d32824 Promotion of kernel.lnx.3.18.c5-170428.1.
+0db86c4 Merge "ANDROID: fix acl leaks"
+a41174e Merge "ANDROID: ion: Protect kref from userspace manipulation"
+c9fc44b ANDROID: fix acl leaks
+4ab3841 FROMLIST: 9p: fix a potential acl leak
+8a98b49 posix_acl: Clear SGID bit when setting file permissions
+0f59875 ANDROID: ion: Protect kref from userspace manipulation
+f1c121b udp: properly support MSG_PEEK with truncated buffers
+9477e75 Promotion of kernel.lnx.3.18.c5-170428.
+54abbd8 Merge "msm: camera: Fix kernel overwrite GET_BUF_BY_IDX ioctl"
+7c9a1e4 Merge "soc: qcom: remove debugfs interface from ssr, service locator & notifier"
+7c07a20 Merge "msm: isp: increase UB size for isp40"
+ae3aaea Merge "msm: kgsl: Fix kgsl memory allocation and free race condition"
+8576fee msm: camera: Fix kernel overwrite GET_BUF_BY_IDX ioctl
+987185d ASoC: msm: qdspv2: add result check when audio process fail
+222654e Promotion of kernel.lnx.3.18.c5-170427.
+e43ca6f Merge "msm: mdss: avoid overflow in mdp clock rate calculation for rotator"
+50b80ed Promotion of kernel.lnx.3.18.c5-170426.
+fec3759 msm: camera: isp: fix various issues in reseving ub
+66b1f47 Merge "crypto: msm: Fix buffer overflow issue"
+ff09c37 Merge "ashmem: remove cache maintenance support"
+1bd0067 Merge "msm: kgsl: Fix the race between context create and destroy"
+bd39ed4 Merge "msm: ipa: Fix memory leak in ipa driver"
+
 R5:
 2941cbc (HEAD -> rk-los-n-eas-master, origin/rk-los-n-eas-master) Defconfig: Enable Advanced TCP Options
 18d3e99 msm: mpm: disable debugging
