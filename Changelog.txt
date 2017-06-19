@@ -1,5 +1,237 @@
 Changelog For Render Kernel!!
 
+R7:
+c8b7dd3 (HEAD -> rk-los-n-master) Build: Add new LINARO 7.1.1 Toolchain
+55c706a (origin/rk-los-n-master, origin/eas-r7-t16, eas-r7-t16) kernel: avoid adding non-thread-group task to LMK rbtree
+e16af46 kernel: support task's adj rbtree
+ba4d7a0 fs: avoid adding non-thread-group task to LMK rbtree
+d3334d9 fs: support task's adj rbtree
+9d7459f drivers:lmk: Fix null pointer issue
+86fdc08 lowmemorykiller: redesign memory instrumentation
+fea1c2a staging: android: lowmemorykiller: skip dying or exiting task
+b806da2 drivers:lmk: Fix double delete issue
+218e300 drivers:lmk: implement task's adj rbtree
+9b8c0ac lowmemorykiller: use for_each_thread instead of buggy while_each_thread
+b1168a4 lowmemorykiller: enhance debug information
+2db8a2e android/lowmemorykiller: Ignore tasks with freed mm
+3adc121 android/lowmemorykiller: Check all tasks for death pending
+2d71adf Merge branch 'cm-14.1' of https://github.com/LineageOS/android_kernel_oneplus_msm8996 into eas-r7-t16
+c2c09fe Defconfig: Enable CONFIR_SCHED_DEBUG to prep for Lisa Toolkit testing :)
+6039b66 drivers: wakeup: add option to disable bluetooth_timer
+1e0bbc0 Render Kernel for LOS-N-EAS: Release 6
+d50a779 Merge remote-tracking branch 'lineage-op3/cm-14.1' into eas-r6-t6
+e3cc69d Build: Update TC to Linaro 6.3.1 052017
+c3f1ae3 Defconfig: Disable CONFIG_SCHED_DEBUG
+d11b708 Defconfig: Enable Low Memory Killer and disable MEMCG
+ac3f4d1 lowmemorykiller: account for unevictable pages
+5750d6c android/lmk: reset to common-3.18 version
+f88e44e Defconfig: Enable CONFIG_BLK_DEV_NULL_BLK for I/O benchmarking
+8731412 Defconfig: Enable CONFIG_BFQ_GROUP_IOSCHED
+42e6eb7 BFQ: Port BFQ-v8r10 to Android 3.18 kernel
+9f72777 Remove BFQ source files from 3.18
+84b5680 Render Kernel for LOS-N-EAS: Release 5
+e31d4f5 Defconfig: Enable Advanced TCP Options
+181e9b9 msm: mpm: disable debugging
+e9b9b3b msm: vidc: disable debug logs
+a1ab7b3 qcom-cpufreq: take diferent startup freqs from OP3 into account
+068b83d qcom-cpufreq: ensure startup is according to default frequencies (no overclocking/underclocking)
+888c6f3 Remove "-dirty" from Kernel name
+eb1e39b power: make sync on suspend optional
+4ee2b63 Render Kernel for LOS-N-EAS: Release 4
+2265413 display: add a simple api to query the display state (on/off) at any point in time
+45fed05 platform/msm: haptic: expose vibrate function
+5ab7de9 wake_gestures: add s2w and dt2w
+e6c465e sweep2sleep: fix device name
+ab15fb8 sweep2sleep: don't create input device
+a9d9f94 touch: sweep2sleep
+c72d283 power:qpnp-charger: extended charge time from 30s to 100s when battery status is near to full
+99d386c Defconfig: Enable CONFIG_FORCE_FAST_CHARGE
+3de280b drivers: misc: implement usb fast charge mode
+89885f8 drivers: wakeup: allow to request and count wakelocks with screen on.
+5b3eea3 drivers: wakeup: allow 1 wakeup from IPA_WS every now and then
+cf3bc82 drivers: wakeup: be more thorough with blocking wakelocks
+d71199c drivers: wakeup: it's pointless to output the active wakeup sources during screen on, no need to go through the rcu locks and list iterations every now and then
+fdc929b drivers: wakeup: there's no much point in running the blockers during screen on
+850a182 drivers: wakeup: run the wakelock blockers during wakeup_source activation and every resume
+d96437c drivers: wakeup: more thoroughly deactivation of wakelocks
+a85026f power: align wakeup_sources format
+49c8155 drivers: wakeup: add options to disable timerfd, netlink and wlan wakelocks
+cdea538 drivers: wakeup: bypass two WiFi wakelocks
+c0dc2df power: wakeup: prevent IPA_WS wakelock from being acquired by default
+b869d1f random: Remove kernel blocking API
+e8b3734 random: Add callback API for random pool readiness
+e0d8296 random: Blocking API for accessing nonblocking_pool
+ffa4a18 random: Wake up all getrandom(2) callers when pool is ready
+e68d476 writeback: fix writeback cache thrashing
+759e87d adrenoboost: disable by default
+b49d39c adrenoboost: finetuning algorithm - scale it a bit down
+7fd3da6 msm_adreno_tz: add adrenoboost parameter
+8da1ec4 Defconfig: Enable CONFIG_SOUND_CONTROL
+463ae54 ASoC: wcd9335: prevent speaker gain from being reset
+725c2b4 sound_control: fix merge error
+eed0304 ASoC: wcd9335: add analog headphone gain
+b541e39 ASoC: wcd9335: fix speaker gain controls
+608e11a ASoC: wcd9335: add mic gain and speaker gain for OnePlus3
+04eeffb ASoC: wcd9335: Sound control
+6fe76ac tcp_cubic: do not set epoch_start in the future
+247ebdc tcp_cubic: better follow cubic curve after idle period
+009d740 net: sch_generic: Allow devices to opt-out net watchdog
+b9de981 disable crc check
+e01c922 Defconfig: Enable CONFIG_FB_MSM_MDSS_KCAL_CTRL
+73017d8 msm: mdss: KCAL: disable igc update
+d9cd408 msm: mdss: KCAL: Send a pp display commit when changes are made
+ad74a0c mdss mdp: kcal for mdss_mdp_v1_7
+d7b326a msm: thermal: Add sysfs nodes to control parameters
+c4b4bab PM / devfreq: Add a governor white list
+9d9c37f PM: devfreq: Fix simple_ondemand crashing on startup
+d001fa62 msm: kgsl: Report correct GPU frequency in sysfs
+f0d8a8d PM: devfreq: Use high priority workqueue
+990bf76 cfq-iosched: fix the setting of IOPS mode on SSDs
+2932b0a block: Make CFQ default to IOPS mode on SSDs
+273e050 AIO: Don't plug the I/O queue in do_io_submit()
+3cd5dca Defconfig: Update IOSCHEDS
+a7f0d32 block: add fifo scheduler
+f9a278e block: Maple.iosched: Fix Compiler Errors
+bf59bc2 block: maple: Stop abusing csd.list for fifo_time
+a513ee8 maple-iosched: Fix the -Wdeclaration-after-statement warnings
+29eea0d block: maple: Fix inverted logic
+3760c01 block: maple: Make bools constant across functions
+24aa65a block: maple: Use native display state instead of PowerSuspend
+871c696 block: maple: Serve asynchronous requests before synchronous ones
+05598b3 block: maple: Fix some logic, import former/latter request logic from SIO, and use some improved bits of SIO
+bd12a38 block: maple: Catch writes_starved sooner, increase limit.
+4acd418 block: maple: Clean up and add patchlevel macro to keep track of commits
+17701c4 block: maple: Remove CONFIG_HZ dependency, assume 300 for interrupt frequency
+5f77457 block: [Introduded for 3.18.y] Add Maple I/O Scheduler
+f1cd48e zen-iosched: change fifo_batch to 16
+2d8cabd block: add zen scheduler
+88090b2 SIO: update for linux 3.18
+2ef9076e FIOPS: update for linux 3.18
+08cad0c Add SIO and FIOPS i/o schedulers
+4ca37237 Added fsync on/off support.
+21eff09 mm: slub: Default slub_max_order to 0
+ac29779 mmc: move to a SCHED_FIFO thread
+685b7f8 binfmt_elf.c: use get_random_int() to fix entropy depleting
+ed0e71d qdsp6v2: extend compilation with Os
+e0d9e19 sound: soc: optimize for size
+a21cd56 sound: msm: qdsp6v2: optimize for size
+d51a03f asm-generic: atomic.h: relaxed atomic_read
+17d6928 op3:tri_state_key: fix positions
+894820a op3:tri_state_key: allow more key codes for extra modes
+7ae3af15 tri_state_key: allow more key codes for extra modes
+568e0f2 Revert "cpuidle: Wakeup only cpus for which qos has changed."
+86d5602 cpuidle: Fix cpuidle_state_is_coupled() argument in cpuidle_enter()
+f8da428 Build: Update Linaro TC to 6.3.1 022017
+c8292de Build: Update build script
+ba7952f Build: Update AnyKernel path
+7df9cd17 staging: binder - Set binder_debug_mask=0 to suppress logging
+b98dd78 android: binder: Disable preemption while holding the global binder lock.
+3787d63 CHROMIUM: android: binder: Fix potential scheduling-while-atomic
+7a2dc8c Fixes for GCC 6+ warnings and several errors
+e8d6e27 kbuild: move -Wunused-const-variable to W=1 warning level
+c99fc9a arm64/boot/Makefile: Make sure find command follows symbolic links to find the dtb
+32796e3 (origin/eas-cleanup, eas-project/msm8996-eas-1.2, eas-cleanup) Defconfig: Update & Cleanup for EAS
+f107ad8 Defconfig: Enable RCU_BOOST Enable RCU boost to avoid risk of priority-inversion and memory leaks when readers are preempted.
+a001919 Revert "memcg: add permission check"
+36fd765 Revert "cgroup: memcg: pass correct argument to subsys_cgroup_allow_attach"
+401012e cgroup: Change from CAP_SYS_NICE to CAP_SYS_RESOURCE for cgroup migration permissions
+5cbfa62 CHROMIUM: cgroups: relax permissions on moving tasks between cgroups
+21d9aa3 ANDROID: sched/tune: Remove leftover instances of allow_attach
+df5a0b9 Revert "cgroup: refactor allow_attach function into common code"
+4cdff87 Revert "cgroup: Add generic cgroup subsystem permission checks"
+de89892 Revert "cgroup: Clean up after allow_attach check"
+07f7314 cpuset: make sure new tasks conform to the current config of the cpuset
+b9d444f Revert "cpuset: Add allow_attach hook for cpusets on android."
+487d4e5 cpuset: handle race between CPU hotplug and cpuset_hotplug_work
+b46adbe sched: Fix build without cpufreq_sched governror
+fb9ea44 EAS: Silence logging caused by EAS changes
+7025631 sched: walt: fix window misalignment when HZ=300
+ec2bc3e UPSTREAM: PM / sleep: make PM notifiers called symmetrically
+4feef49 cpuidle: don't disable cpuidle when entering suspend
+a3c5a86 BACKPORT: sched/rt: Reduce rq lock contention by eliminating locking of non-feasible target
+e43f636 sched/loadavg: Fix loadavg artifacts on fully idle and on fully loaded systems
+2d732c7 sched: Check if we got a shallowest_idle_cpu before searching for least_loaded_cpu
+e30cab0 sched/rt/nohz: Stop scheduler tick if running realtime task
+5e2bb5d sched: Implement lockless wake-queues
+7ba0d69 UPSTREAM: sched/fair: Fix post_init_entity_util_avg() serialization
+ddda404 ANDROID: sched: fix duplicate sched_group_energy const specifiers
+7757cd8 DTS: Update Energy Model for SD820 Devices (msm8996)
+93dbcc0 DTS: MSM8996: EAS Energy Model Change
+b46ac5e sched: EAS: energy model change. Based on QCOM 8996AB one.
+1b73877 sched/tune: don't use schedtune before it is ready
+1da6370 sched/fair: use SCHED_CAPACITY_SCALE for energy normalization
+63d4cb3 sched/{fair,tune}: use reciprocal_value to compute boost margin
+33b3ecb sched/tune: Initialize raw_spin_lock in boosted_groups
+962fa36 sched/tune: report when SchedTune has not been initialized
+ac68600 sched/tune: fix sched_energy_diff tracepoint
+266bafe sched/tune: increase group count to 5
+6de8168 cpufreq/schedutil: use boosted_cpu_util for PELT to match WALT
+6875b48 sched/fair: Fix sched_group_energy() to support per-cpu capacity states
+558e382 sched/fair: discount task contribution to find CPU with lowest utilization
+33f8f5d cpufreq/schedutil: Fix schedutil's 'default governor' machinery
+d1360a4 sched/fair: ensure utilization signals are synchronized before use
+0f0461b sched/walt: Add CONFIG_USE_WALT to change default usage of WALT
+66ec392 sched/fair: remove task util from own cpu when placing waking task
+afc1830 trace:sched: Make util_avg in load_avg trace reflect PELT/WALT as used
+9ab98ac Experimental!: sched/fair: Add eas (& cas) specific rq, sd and task stats
+34a4a3e2 sched/core: Fix PELT jump to max OPP upon util increase
+6891dca sched: EAS: energy model change
+45fea65 perf: protect group_leader from races that cause ctx double-free
+374050b DEBUG: sched/fair: Fix sched_load_avg_cpu events for task_groups
+d66d884 DEBUG: sched/fair: Fix missing sched_load_avg_cpu events
+4898e26 Revert "cgroup: Fix issues in allow_attach callback"
+d5666e4 ANDROID: sched/walt: fix build failure if FAIR_GROUP_SCHED=n
+4140869 sched/walt: kill {min,max}_capacity
+86e33c9 sched: EAS & 'single cpu per cluster'/cpu hotplug interoperability
+eec11dd sched: Multiple upstream load tracking changes
+b836ba0 sched/fair: Fix effective_load() to consistently use smoothed load
+d8f4be0 sched: propagate asynchrous detach
+c7d934c sched: propagate load during synchronous attach/detach
+a7af995 sched: fix hierarchical order in rq->leaf_cfs_rq_list
+b893376 sched: factorize PELT update
+f2211b7 sched: factorize attach entity
+19b8c88 sched/fair: Improve PELT stuff some more
+0e4574d sched/fair: Apply more PELT fixes
+4f31ff5 sched/fair: Initiate a new task's util avg to a bounded value
+d94e4c7 Fixup!: sched/fair: No need to 'and' current cpu w/ online mask in wakeup
+b3dd172 Fixup!: Return first idle cpu for prefer_idle task immediately
+493b921 Fixup!: sched/fair: Simplify idle_idx handling in select_idle_sibling()
+f7f60d2 Fixup!: sched/fair: Refactor min_util, new_util in find_best_target()
+aa6a4b0 Fixup!: sched/fair: Simplify idle_idx handling in find_best_target()
+fbcda2a Fixup!: sched/fair: Simplify target_util handling in find_best_target()
+baae471 sched/fair: Simplify backup_capacity handling in find_best_target()
+b32f7a2 Experimental!: sched/fair: Change cpu iteration order in find_best_target()
+17dfe56 Experimental!: sched/core: Add first cpu w/ max/min orig capacity to root domain
+09fbd8a sched/core: Remove remnants of commit fd5c98da1a42
+5667695 Experimental!: sched: Remove sysctl_sched_is_big_little
+adc901b Experimental!: sched/fair: Code !is_big_little path into select_energy_cpu_brute()
+57c89cb Experimental!: EAS: sched/fair: Re-integrate 'honor sync wakeups' into wakeup path
+cd220ea Fixup!: sched/fair.c: Set SchedTune specific struct energy_env.task
+67ba0a5 Experimental!: sched/fair: Energy-aware wake-up task placement
+83f57e9 Experimental!: sched/fair: Add energy_diff dead-zone margin
+fdd04a6 Experimental!: sched/fair: Decommission energy_aware_wake_cpu()
+477698a Experimental!: sched/fair: Do not force want_affine eq. true if EAS is enabled
+da994be arm64: Set SD_ASYM_CPUCAPACITY sched_domain flag on DIE level
+97a6ad3 sched/fair: Fix incorrect comment for capacity_margin
+bc7550d sched/fair: Avoid pulling tasks from non-overloaded higher capacity groups
+bb9b1b4 sched/fair: Add per-CPU min capacity to sched_group_capacity
+1124b7a sched/fair: Consider spare capacity in find_idlest_group()
+df2030e sched/fair: Compute task/cpu utilization at wake-up correctly
+a539825 sched/fair: Let asymmetric CPU configurations balance at wake-up
+8550ea0 sched/core: Enable SD_BALANCE_WAKE for asymmetric capacity systems
+f9a2d45 sched/core: Pass child domain into sd_init()
+aa2786c sched/core: Introduce SD_ASYM_CPUCAPACITY sched_domain topology flag
+46bae01 sched/core: Remove unnecessary NULL-pointer check
+c43c6e7 sched/fair: Optimize find_idlest_cpu() when there is no choice
+30c3683 sched/fair: Make the use of prev_cpu consistent in the wakeup path
+d127ec1 sched/core: Fix power to capacity renaming in comment
+835f55c Partial Revert: "WIP: sched: Add cpu capacity awareness to wakeup balancing"
+b33344d Revert "WIP: sched: Consider spare cpu capacity at task wake-up"
+67424bd Defconfig: Enable CONFIG_CPU_FREQ_GOV_SCHEDUTIL
+b3200ef sched: Make iowait_boost optional in schedutil
+46645e2 SCHED: SCHEDUTIL: Fix tunables not sticking after core going offline
+b3b956b FROM-LIST: cpufreq: schedutil: Redefine the rate_limit_us tunable
+
 R6:
 b17cbd4 (HEAD -> rk-los-n-eas-master, eas-r6-t6) Merge remote-tracking branch 'lineage-op3/cm-14.1' into eas-r6-t6
 ab9517a (origin/eas-r6-t6) Build: Update TC to Linaro 6.3.1 052017
